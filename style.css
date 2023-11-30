@@ -1,0 +1,120 @@
+:root{
+    --primary: #2671d3;
+    --primary-light: #b7d6ff;
+    --primary-deep: #4154b8;
+    --secondary: #4f5fb4;
+    --secondary-deep: #46518e;
+    --white: #ffffff;
+    --grey: #ceddeb;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Bangla176, system-ui, -apple-system, BlinkMacSystemFont, "segoe ui", Ubuntu, Cantarell, Oxygen, Roboto, Helvetica, Arial, sans-serif;
+
+    background-image: linear-gradient(to top left, var(--secondary), var(--secondary-deep));
+    background-repeat: no-repeat;
+
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.background-year{
+    color: var(--white);
+    position: fixed;
+    z-index: -100;
+    right: 20px;
+    top: -80px;
+    font-size: 400px;
+    font-weight: 600;
+    opacity: 0.2;
+    animation: moveLeftRight 30s infinite;
+    user-select: none;
+}
+@keyframes moveLeftRight {
+    0%{
+        right: 20px;
+    }
+    50%{
+        right: 100px;
+    }
+    100% {
+        right: 20px;
+    }
+}
+
+.wrapper{
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar{
+    width: 700px;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: var(--white);
+    z-index: 100;
+}
+
+.head{
+    padding: 20px;
+}
+.head > select{
+    appearance: none;
+    border: none;
+    background-color: var(--grey);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.head > select:focus{
+    outline: 0;
+}
+
+.head > select > option{
+    border: none;
+    outline: 0;
+}
+.head > input{
+    border: none;
+    padding: 10px 20px;
+    background-color: var(--grey);
+    appearance: none;
+    border-radius: 5px;
+}
+.head > input:focus{
+    outline: 0;
+}
+
+
+.all-dates{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+.all-dates > div {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.all-dates > .date:hover{
+    background-color: var(--primary-light);
+}
+
+.all-dates > .active{
+    background-color: var(--primary-light);
+}
+
